@@ -2,22 +2,20 @@ pipeline {
   agent any
     tools{
           maven 'maven3'
-          //jdk 'jdk8'
+          jdk 'jdk8'
           }
+  environment{
+         JAVA_BIN=${jdk}/bin
+  }
         stages{
            stage('Building the code'){
               steps{
                  echo "build is in process"
-                 echo "${PATH}"
-                 
+                echo "${JAVA_BIN}/java --version"
+                                 
                  sh 'mvn clean package'
                }
-             }
-          
-          stage('Starting the microservice'){
-            steps{
-              sh'java -jar target/*.jar'
-            }
+                       
           }
           
        }
