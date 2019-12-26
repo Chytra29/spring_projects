@@ -5,7 +5,7 @@ pipeline {
           
           }
   environment{
-         project=springboot
+         project='springboot'
   }
         stages{
            stage('Building the code'){
