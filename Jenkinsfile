@@ -16,6 +16,7 @@ pipeline {
           
           stage('Starting the microservice'){
             steps{
+              echo "Hello"
               //sh 'java -jar **/target/*.jar'
             }
           }
