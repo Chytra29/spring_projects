@@ -9,7 +9,7 @@ pipeline {
               steps{
                  echo "build is in process"
                  echo "${PATH}"
-                 sh 'java -version'
+                 sh '${jdk}/bin/java -version'
                  //sh 'mvn clean package'
                }
              }
