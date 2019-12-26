@@ -12,6 +12,13 @@ pipeline {
                  sh 'mvn clean package'
                }
              }
+          
+          stage('Starting the microservice'){
+            Steps{
+              sh 'java -jar ${WORSKPACE}/target/*.jar'
+            }
+          }
+          
        }
 
 
