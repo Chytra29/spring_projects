@@ -11,9 +11,9 @@ pipeline {
            stage('Building the code'){
               steps{
                  echo "build is in process"
-                echo "${JAVA_BIN}/java --version"
-                                 
-                 sh 'mvn clean package'
+                 echo "${JAVA_BIN}"
+  
+                 //sh 'mvn clean package'
                }
                        
           }
