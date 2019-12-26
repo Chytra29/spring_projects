@@ -2,8 +2,9 @@ pipeline {
   agent any
     tools{
           maven 'maven3'
-         }
-       stages{
+          jdk 'jdk8'
+          }
+        stages{
            stage('Building the code'){
               steps{
                  echo "build is in process"
