@@ -8,7 +8,8 @@ pipeline {
            stage('Building the code'){
               steps{
                  echo "build is in process"
-                 sh 'mvn clean package'
+                echo "${PATH}"
+                 #sh 'mvn clean package'
                }
              }
        }
