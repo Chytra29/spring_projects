@@ -15,7 +15,7 @@ pipeline {
           
           stage('Starting the microservice'){
             steps{
-              sh 'java -jar ${WORSKPACE}/target/*.jar'
+              sh 'java -jar **/target/*.jar'
             }
           }
           
