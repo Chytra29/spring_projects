@@ -9,15 +9,15 @@ pipeline {
               steps{
                  echo "build is in process"
                  echo "${PATH}"
-                 echo "${WORKSPACE}"
-                 //sh 'mvn clean package'
+                 
+                 sh 'mvn clean package'
                }
              }
           
           stage('Starting the microservice'){
             steps{
               echo "Hello"
-              //sh 'java -jar **/target/*.jar'
+              sh'java -jar "${WORKSPACE}"/target/*.jar'
             }
           }
           
