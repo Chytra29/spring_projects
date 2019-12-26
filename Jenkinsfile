@@ -5,7 +5,7 @@ pipeline {
           jdk 'jdk8'
           }
   environment{
-         JAVA_BIN=${jdk}/bin
+         JAVA_BIN='${jdk}/bin'
   }
         stages{
            stage('Building the code'){
