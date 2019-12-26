@@ -16,8 +16,9 @@ pipeline {
           
           stage('Starting the microservice'){
             steps{
-              echo "Hello"
-              sh'java -jar "${WORKSPACE}"/target/*.jar'
+              def location= ${WORKSPACE}
+              echo "${location}"
+              sh'java -jar ${location}/target/*.jar'
             }
           }
           
