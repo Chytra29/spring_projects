@@ -9,7 +9,7 @@ pipeline {
               steps{
                  echo "build is in process"
                 echo "${PATH}"
-                 #sh 'mvn clean package'
+                 //sh 'mvn clean package'
                }
              }
        }
