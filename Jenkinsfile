@@ -15,6 +15,19 @@ pipeline {
                        
           }
           
+          
+             stage('Artifactory info'){
+              steps{
+                 rtServer (
+                 id: 'Artifactory-1',
+                 url: 'http://35.188.102.0:8081//artifactory',
+                 username: 'admin',
+                 password: 'password'
+    
+  )
+               }
+                       
+          }
        }
 
 
