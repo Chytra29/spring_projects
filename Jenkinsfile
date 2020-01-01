@@ -5,20 +5,12 @@ pipeline {
           jdk 'jdk8'
         
           }
-  environment{
-         project='springboot'
-         
-         
-  }
+  
         stages{
            stage('Building the code'){
               steps{
                  echo "build is in process"
-                 echo "${project}"
-                sh '${jdk}/bin/java -version'
-                
-  
-                 //sh 'mvn clean package'
+                 sh 'mvn clean package'
                }
                        
           }
