@@ -32,6 +32,13 @@ pipeline {
                     releaseRepo: "libs-release-local",
                     snapshotRepo: "libs-snapshot-local"
                      )
+                
+                rtMavenResolver (
+                    id: "MAVEN_RESOLVER",
+                    serverId: "Artifactory-1",
+                    releaseRepo: "libs-release",
+                    snapshotRepo: "libs-snapshot"
+                )
                }
                        
           }
