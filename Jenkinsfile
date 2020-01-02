@@ -42,9 +42,16 @@ pipeline {
                }
                        
           }
-               }
-                       
-          }
+               
+          stage ('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "Artifactory-1"
+                )
+            }
+        }             
+          
+          
        }
 
 
