@@ -7,13 +7,7 @@ pipeline {
           }
   
         stages{
-           stage('Building the code'){
-              steps{
-                 echo "build is in process"
-                 sh 'mvn clean package'
-               }
-                       
-          }
+          
           
           
              stage('Artifactory info'){
@@ -39,6 +33,15 @@ pipeline {
                     releaseRepo: "libs-release",
                     snapshotRepo: "libs-snapshot"
                 )
+              }
+             }
+                 stage('Building the code'){
+                 steps{
+                 echo "build is in process"
+                 sh 'mvn clean package'
+               }
+                       
+          }
                }
                        
           }
