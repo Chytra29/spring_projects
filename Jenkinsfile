@@ -23,15 +23,15 @@ pipeline {
                  rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
                     serverId: "Artifactory-1",
-                    releaseRepo: "libs-release-local",
-                    snapshotRepo: "libs-snapshot-local"
+                    releaseRepo: "demo_maven",
+                    snapshotRepo: "demo_maven"
                      )
                 
                 rtMavenResolver (
                     id: "MAVEN_RESOLVER",
                     serverId: "Artifactory-1",
-                    releaseRepo: "libs-release",
-                    snapshotRepo: "libs-snapshot"
+                    releaseRepo: "demo_maven",
+                    snapshotRepo: "demo_maven"
                 )
               }
              }
