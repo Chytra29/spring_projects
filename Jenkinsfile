@@ -24,7 +24,14 @@ pipeline {
                  username: 'admin',
                  password: 'password'
     
-  )
+                           )
+                
+                 rtMavenDeployer (
+                    id: "MAVEN_DEPLOYER",
+                    serverId: "Artifactory-1",
+                    releaseRepo: "libs-release-local",
+                    snapshotRepo: "libs-snapshot-local"
+                     )
                }
                        
           }
