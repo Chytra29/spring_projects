@@ -42,7 +42,7 @@ pipeline {
                 "files": [
                {
               "pattern": "demo_maven/*.jar",
-              "target": "/var/lib/jenkins/workspace/deploy_springboot/",
+              "target": "/var/lib/jenkins/workspace/deploy_springboot/"
                }
             ]
         }''',
