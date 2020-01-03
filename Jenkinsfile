@@ -37,7 +37,7 @@ pipeline {
           {
             steps{
               rtDownload(
-                serverId: 'Artifactory-1'
+                serverId: 'Artifactory-1',
                  spec: '''{
                 "files": [
                {
