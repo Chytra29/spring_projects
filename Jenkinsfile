@@ -19,9 +19,9 @@ pipeline {
           {
             steps{
                rtUpload (
-    serverId: 'Artifactory-1',
-    spec: '''{
-          "files": [
+            serverId: 'Artifactory-1',
+           spec: '''{
+            "files": [
             {
               "pattern": "${WORKSPACE}/target/*.jar",
               "target": "demo_maven/"
@@ -33,13 +33,24 @@ pipeline {
 )
             }
           }
-          
+          stage('Download from Artifactory for deployment')
+          {
+            steps{
+              rtDownload(
+                serverId: 'Artifactory-1'
+                 spec: '''{
+          "files": [
+            {
+              "pattern": "demo_maven/*.jar",
+              "target": "/var/lib/jenkins/workspace/deploy_springboot/",
+            }
+          ]
+    }''',
+              )
+            }
+          }
                
-          stage ('Publish build info') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "Artifactory-1"
-                )
+          
             }
         }             
           
