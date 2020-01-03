@@ -39,13 +39,13 @@ pipeline {
               rtDownload(
                 serverId: 'Artifactory-1'
                  spec: '''{
-          "files": [
-            {
+                "files": [
+               {
               "pattern": "demo_maven/*.jar",
               "target": "/var/lib/jenkins/workspace/deploy_springboot/",
-            }
-          ]
-    }''',
+               }
+            ]
+        }''',
               )
             }
           }
