@@ -23,7 +23,7 @@ pipeline {
     spec: '''{
           "files": [
             {
-              "pattern": "**/target/*.jar",
+              "pattern": "/var/lib/jenkins/workspace/sample1_basic/target/*.jar",
               "target": "demo_maven/"
             }
          ]
