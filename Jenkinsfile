@@ -19,19 +19,20 @@ pipeline {
           {
             Steps{
                def server = Artifactory.server "Artifactory-1"
-               rtUpload (
-                serverId: 'Artifactory-1',
-                 spec: '''{
-                 "files": [
-               {
-              "pattern": "**/target/*.jar",
-              "target": "demo_maven"
-            }
-         ]
-    }''',
+                  def uploadSpec =
+            '''{
+            "files": [
+                {
+                    
+                    "pattern": "**/target/*.jar",
+                    "target": ""demo_maven""
+                }
+                
+            ]
+        }'''
  
     
-)
+        server.upload(uploadSpec)
             }
           }
           
