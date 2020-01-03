@@ -14,6 +14,27 @@ pipeline {
                }
                        
           }
+          
+          stage('Uploading to Artifactory')
+          {
+            Steps{
+               def server = Artifactory.server "Artifactory-1"
+               rtUpload (
+                serverId: 'Artifactory-1',
+                 spec: '''{
+                 "files": [
+               {
+              "pattern": "**/target/*.jar",
+              "target": "demo_maven"
+            }
+         ]
+    }''',
+ 
+    
+)
+            }
+          }
+          
                
           stage ('Publish build info') {
             steps {
