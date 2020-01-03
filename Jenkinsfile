@@ -17,7 +17,7 @@ pipeline {
           
           stage('Uploading to Artifactory')
           {
-            Steps{
+            steps{
                def server = Artifactory.server "Artifactory-1"
                   def uploadSpec =
             '''{
